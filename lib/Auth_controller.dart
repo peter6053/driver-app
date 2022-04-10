@@ -39,14 +39,14 @@ class AuthController extends GetxController {
     }
   }
 
-  void register(String email, password) {
+  void register; async(String email, password) async {
     try {
-      auth.createUserWithEmailAndPassword(email: email, password: password);
+     await  auth.createUserWithEmailAndPassword(email: email, password: password);
     } catch (e) {
        GetSnackBar("About User", "message",
         backgroundColor: Colors.redAccent,
         snackPosition: SnackPosition.BOTTOM,
-        titleText: Text("Accoinnt creation failed",
+        titleText: const Text("About User",
           style: TextStyle(
             color: Colors.white
           )
