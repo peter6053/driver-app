@@ -13,6 +13,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+
 class AuthController extends GetxController {
   //AuthControl instance
   static AuthController instance = Get.find();
@@ -35,39 +36,18 @@ class AuthController extends GetxController {
       print("loginpage");
       Get.off(() => loginPage());
     } else {
-      Get.off(() => WelcomePage());
+      Get.off(() => WelcomePage(email: '',));
     }
   }
 
-  void register; async(String email, password) async {
-    try {
-     await  auth.createUserWithEmailAndPassword(email: email, password: password);
-    } catch (e) {
-       GetSnackBar("About User", "message",
-        backgroundColor: Colors.redAccent,
-        snackPosition: SnackPosition.BOTTOM,
-        titleText: const Text("About User",
-          style: TextStyle(
-            color: Colors.white
-          )
+  void register;
 
-        ),
-        messageText: Text(
-            e.toString(),
-          style: const TextStyle(
-              color: Colors.white
-          )
-        ),
-
-      );
-    }
-  }
-  @override
-  void Login; (String email, password) async {
+  async(String email, password) async {
     try {
-      await  auth.signInWithEmailAndPassword(email: email, password: password);
+      await auth.createUserWithEmailAndPassword(
+          email: email, password: password);
     } catch (e) {
-      GetSnackBar("About Login", " login messagemessage",
+      GetSnackBar("About User", "message",
         backgroundColor: Colors.redAccent,
         snackPosition: SnackPosition.BOTTOM,
         titleText: const Text("About User",
@@ -85,8 +65,43 @@ class AuthController extends GetxController {
 
       );
     }
+  }
+
+  @override
+  void Login;
+
+  (
+
+  String email, password
+
+  )
+
+  async {
+  try {
+  await auth.signInWithEmailAndPassword(email: email, password: password);
+  } catch (e) {
+  GetSnackBar("About Login", " login messagemessage",
+  backgroundColor: Colors.redAccent,
+  snackPosition: SnackPosition.BOTTOM,
+  titleText: const Text("About User",
+  style: TextStyle(
+  color: Colors.white
+  )
+
+  ),
+  messageText: Text(
+  e.toString(),
+  style: const TextStyle(
+  color: Colors.white
+  )
+  ),
+
+  );
+  }
   },
+
   Future<void> logout() async {
-   await  auth.signOut();
+    await auth.signOut();
   }
 }
+
