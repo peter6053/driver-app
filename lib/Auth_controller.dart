@@ -62,4 +62,31 @@ class AuthController extends GetxController {
       );
     }
   }
+  @override
+  void Login; (String email, password) async {
+    try {
+      await  auth.signInWithEmailAndPassword(email: email, password: password);
+    } catch (e) {
+      GetSnackBar("About Login", " login messagemessage",
+        backgroundColor: Colors.redAccent,
+        snackPosition: SnackPosition.BOTTOM,
+        titleText: const Text("About User",
+            style: TextStyle(
+                color: Colors.white
+            )
+
+        ),
+        messageText: Text(
+            e.toString(),
+            style: const TextStyle(
+                color: Colors.white
+            )
+        ),
+
+      );
+    }
+  },
+  Future<void> logout() async {
+   await  auth.signOut();
+  }
 }
