@@ -6,6 +6,12 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+ List images =[
+   "facebook.png",
+   "twitter.png",
+   "login3.png"
+ ];
+
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -20,14 +26,13 @@ class SignUpPage extends StatelessWidget {
                     image: AssetImage("img/login3.png"), fit: BoxFit.cover)),
             child: Column(
               children: [
-                SizedBox(height: h*0.16,),
+                SizedBox(
+                  height: h * 0.16,
+                ),
                 CircleAvatar(
                   backgroundColor: Colors.white70,
                   radius: 50,
-                  backgroundImage:AssetImage (
-                    "img/twitter.png"
-                  ),
-
+                  backgroundImage: AssetImage("img/twitter.png"),
                 )
               ],
             ),
@@ -46,7 +51,9 @@ class SignUpPage extends StatelessWidget {
                   "Sign into your account",
                   style: TextStyle(fontSize: 20, color: Colors.grey[500]),
                 ),*/
-                SizedBox(height: 50,),
+                SizedBox(
+                  height: 50,
+                ),
                 Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
@@ -55,35 +62,32 @@ class SignUpPage extends StatelessWidget {
                         BoxShadow(
                             blurRadius: 10,
                             spreadRadius: 7,
-                            offset: Offset(1,1,),
-                            color: Colors.grey.withOpacity(0.2)
-
-                        )
-                      ]
-                  ),
+                            offset: Offset(
+                              1,
+                              1,
+                            ),
+                            color: Colors.grey.withOpacity(0.2))
+                      ]),
                   child: TextField(
                     decoration: InputDecoration(
                         hintText: "your email",
-                        prefixIcon: Icon(Icons.email, color: Colors.orange,),
+                        prefixIcon: Icon(
+                          Icons.email,
+                          color: Colors.orange,
+                        ),
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
-                            borderSide: BorderSide(
-                                color: Colors.white
-                            )
-                        ),
+                            borderSide: BorderSide(color: Colors.white)),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
-                            borderSide: BorderSide(
-                                color: Colors.white
-                            )
-                        ),
+                            borderSide: BorderSide(color: Colors.white)),
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)
-                        )
-                    ),
+                            borderRadius: BorderRadius.circular(20))),
                   ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
@@ -92,36 +96,33 @@ class SignUpPage extends StatelessWidget {
                         BoxShadow(
                             blurRadius: 10,
                             spreadRadius: 7,
-                            offset: Offset(1,1,),
-                            color: Colors.grey.withOpacity(0.2)
-
-                        )
-                      ]
-                  ),
+                            offset: Offset(
+                              1,
+                              1,
+                            ),
+                            color: Colors.grey.withOpacity(0.2))
+                      ]),
                   child: TextField(
                     decoration: InputDecoration(
-                      hintText: "your password",
-                        prefixIcon: Icon(Icons.password, color: Colors.orange,),
+                        hintText: "your password",
+                        prefixIcon: Icon(
+                          Icons.password,
+                          color: Colors.orange,
+                        ),
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
-                            borderSide: BorderSide(
-                                color: Colors.white
-                            )
-                        ),
+                            borderSide: BorderSide(color: Colors.white)),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
-                            borderSide: BorderSide(
-                                color: Colors.white
-                            )
-                        ),
+                            borderSide: BorderSide(color: Colors.white)),
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)
-                        )
-                    ),
+                            borderRadius: BorderRadius.circular(20))),
                   ),
                 ),
-                SizedBox(height: 20,),
-               /* Row(
+                SizedBox(
+                  height: 20,
+                ),
+                /* Row(
                   children: [
                     Expanded(child: Container(),),
                     Text(
@@ -130,14 +131,15 @@ class SignUpPage extends StatelessWidget {
                     )
                   ],
                 )*/
-
               ],
             ),
           ),
-          SizedBox(height: 70,),
+          SizedBox(
+            height: 70,
+          ),
           Container(
-            width: w*0.5,
-            height:h*0.08,
+            width: w * 0.5,
+            height: h * 0.08,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
                 image: DecorationImage(
@@ -145,33 +147,46 @@ class SignUpPage extends StatelessWidget {
             child: Center(
               child: Text(
                 "Sign up",
-                style: TextStyle(fontSize: 36,
+                style: TextStyle(
+                    fontSize: 36,
                     fontWeight: FontWeight.bold,
-                    color: Colors.green
-                ),
+                    color: Colors.green),
               ),
-            ) ,
+            ),
           ),
-          SizedBox(height: w*0.02),
-          RichText(text: TextSpan(
-              text: "Dont have an account",
-              style: TextStyle(
-                  color: Colors.grey[500],
-                  fontSize: 20
-
-              ),
-              children: [TextSpan(
+          SizedBox(height: w * 0.02),
+          RichText(
+              text: TextSpan(
+            text: "Sign up with one of the following methods",
+            style: TextStyle(color: Colors.grey[500], fontSize: 16),
+            /*   children: [TextSpan(
                   text: " Create",
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 20
 
-                  ))
+                  ))*/
 
-              ]
-
-          ) )
+            // ]
+          )),
+          Wrap(
+            children: List<Widget>.generate(3, (index) {
+              return Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: CircleAvatar(
+                  radius: 30,
+                  backgroundColor: Colors.grey[500],
+                  child: CircleAvatar(
+                    radius: 30,
+                    backgroundImage: AssetImage(
+                      "img/"+images[index]
+                    ),
+                  ),
+                ),
+              );
+            }),
+          )
         ],
       ),
     );
