@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:login_firebase/login_page.dart';
+import 'package:login_firebase/welcome_page.dart';
 
 class AuthController extends GetxController {
   //AuthControl instance
@@ -19,13 +20,17 @@ class AuthController extends GetxController {
     _user = auth.currentUser as Rx<User?>;
   //user will be notified
     _user.bindStream(auth.userChanges());
-    rethrow;
+    ever(_user, _initialscreen)
+    
   }
   _initialscreen(User? user){
 
 if (User==null){
   print("loginpage");
   Get.off(()=>loginPage());
-}
+} else
+  {
+    Get.off(()=>WelcomePage());
+  }
   }
 }
