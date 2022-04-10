@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:login_firebase/signup_page.dart';
 
 class loginPage extends StatefulWidget {
   const loginPage({Key? key}) : super(key: key);
@@ -55,6 +59,11 @@ class _loginPageState extends State<loginPage> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
+                        hintText: "your email",
+                        prefixIcon: Icon(
+                          Icons.email,
+                          color: Colors.orange,
+                        ),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide(
@@ -90,6 +99,11 @@ class _loginPageState extends State<loginPage> {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
+                        hintText: "PassWord",
+                        prefixIcon: Icon(
+                          Icons.password,
+                          color: Colors.orange,
+                        ),
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                             borderSide: BorderSide(
@@ -148,6 +162,7 @@ class _loginPageState extends State<loginPage> {
               fontSize: 20
 
             ),
+
             children: [TextSpan(
               text: " Create",
               style: TextStyle(
@@ -155,7 +170,10 @@ class _loginPageState extends State<loginPage> {
                   fontWeight: FontWeight.bold,
                   fontSize: 20
 
-              ))
+              ),
+              recognizer:  TapGestureRecognizer()..onTap=()=>Get.to(()=>SignUpPage()),
+
+            )
 
             ]
 
