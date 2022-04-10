@@ -9,11 +9,7 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
- List images =[
-   "facebook.png",
-   "twitter.png",
-   "login3.png"
- ];
+    List images = ["facebook.png", "twitter.png", "login3.png"];
 
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
@@ -157,18 +153,14 @@ class SignUpPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           RichText(
-
             text: TextSpan(
-              recognizer: TapGestureRecognizer()..onTap=()=>Get.back(),
-              text: "Hava an account?",
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.grey[500]
-
-              )
-            ) ,
+                recognizer: TapGestureRecognizer()..onTap = () => Get.back(),
+                text: "Hava an account?",
+                style: TextStyle(fontSize: 20, color: Colors.grey[500])),
           ),
           SizedBox(height: w * 0.02),
           RichText(
@@ -195,9 +187,7 @@ class SignUpPage extends StatelessWidget {
                   backgroundColor: Colors.grey[500],
                   child: CircleAvatar(
                     radius: 30,
-                    backgroundImage: AssetImage(
-                      "img/"+images[index]
-                    ),
+                    backgroundImage: AssetImage("img/" + images[index]),
                   ),
                 ),
               );

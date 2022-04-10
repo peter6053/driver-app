@@ -42,47 +42,9 @@ class _loginPageState extends State<loginPage> {
                   "Sign into your account",
                   style: TextStyle(fontSize: 20, color: Colors.grey[500]),
                 ),
-                SizedBox(height: 50,),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 10,
-                        spreadRadius: 7,
-                        offset: Offset(1,1,),
-                        color: Colors.grey.withOpacity(0.2)
-
-                      )
-                    ]
-                  ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                        hintText: "your email",
-                        prefixIcon: Icon(
-                          Icons.email,
-                          color: Colors.orange,
-                        ),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        borderSide: BorderSide(
-                          color: Colors.white
-                        )
-                      ),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            borderSide: BorderSide(
-                                color: Colors.white
-                            )
-                        ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20)
-                      )
-                    ),
-                  ),
+                SizedBox(
+                  height: 50,
                 ),
-                SizedBox(height: 20,),
                 Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
@@ -91,12 +53,46 @@ class _loginPageState extends State<loginPage> {
                         BoxShadow(
                             blurRadius: 10,
                             spreadRadius: 7,
-                            offset: Offset(1,1,),
-                            color: Colors.grey.withOpacity(0.2)
-
-                        )
-                      ]
+                            offset: Offset(
+                              1,
+                              1,
+                            ),
+                            color: Colors.grey.withOpacity(0.2))
+                      ]),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        hintText: "your email",
+                        prefixIcon: Icon(
+                          Icons.email,
+                          color: Colors.orange,
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: BorderSide(color: Colors.white)),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: BorderSide(color: Colors.white)),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20))),
                   ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(30),
+                      boxShadow: [
+                        BoxShadow(
+                            blurRadius: 10,
+                            spreadRadius: 7,
+                            offset: Offset(
+                              1,
+                              1,
+                            ),
+                            color: Colors.grey.withOpacity(0.2))
+                      ]),
                   child: TextField(
                     decoration: InputDecoration(
                         hintText: "PassWord",
@@ -106,78 +102,67 @@ class _loginPageState extends State<loginPage> {
                         ),
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
-                            borderSide: BorderSide(
-                                color: Colors.white
-                            )
-                        ),
+                            borderSide: BorderSide(color: Colors.white)),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
-                            borderSide: BorderSide(
-                                color: Colors.white
-                            )
-                        ),
+                            borderSide: BorderSide(color: Colors.white)),
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)
-                        )
-                    ),
+                            borderRadius: BorderRadius.circular(20))),
                   ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(
+                  height: 20,
+                ),
                 Row(
                   children: [
-                    Expanded(child: Container(),),
+                    Expanded(
+                      child: Container(),
+                    ),
                     Text(
                       "sign into your account",
                       style: TextStyle(fontSize: 20, color: Colors.grey[500]),
                     )
                   ],
                 )
-
               ],
             ),
           ),
-          SizedBox(height: 70,),
+          SizedBox(
+            height: 70,
+          ),
           Container(
-            width: w*0.5,
-            height:h*0.08,
+            width: w * 0.5,
+            height: h * 0.08,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(30),
                 image: DecorationImage(
                     image: AssetImage("img/login2.png"), fit: BoxFit.cover)),
             child: Center(
               child: Text(
                 "Sign in",
-                style: TextStyle(fontSize: 36,
+                style: TextStyle(
+                    fontSize: 36,
                     fontWeight: FontWeight.bold,
-                  color: Colors.green
-                ),
+                    color: Colors.green),
               ),
-            ) ,
-          ),
-          SizedBox(height: w*0.02),
-          RichText(text: TextSpan(
-            text: "Dont have an account",
-            style: TextStyle(
-              color: Colors.grey[500],
-              fontSize: 20
-
             ),
-
-            children: [TextSpan(
-              text: " Create",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20
-
-              ),
-              recognizer:  TapGestureRecognizer()..onTap=()=>Get.to(()=>SignUpPage()),
-
-            )
-
-            ]
-
-          ) )
+          ),
+          SizedBox(height: w * 0.02),
+          RichText(
+              text: TextSpan(
+                  text: "Dont have an account",
+                  style: TextStyle(color: Colors.grey[500], fontSize: 20),
+                  children: [
+                TextSpan(
+                  text: " Create",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () => Get.to(() => SignUpPage()),
+                )
+              ]))
         ],
       ),
     );

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "409096544833",
+    "project_id": "fir-getx-app-4d312",
+    "storage_bucket": "fir-getx-app-4d312.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409096544833:android:cdfa9ec28f76e4980e9cc0",
+        "android_client_info": {
+          "package_name": "io.getxfluuter.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "409096544833-0m9ah5g015qa19rtp0b915c1u58dlf87.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcAKnOx8fP3QAjjxBd6yeqjj4-Lp-CtmE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "409096544833-0m9ah5g015qa19rtp0b915c1u58dlf87.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "409096544833-ja0fgh1sk00evnu7t3l2hvsaf03k5puu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.getxfluuter..app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
